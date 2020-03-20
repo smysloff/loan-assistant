@@ -1,0 +1,374 @@
+html,
+body {
+    margin: 0;
+}
+
+body {
+    font-family: Roboto;
+    letter-spacing: 1px;
+    background: #262626;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 640px;
+    min-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-bar,
+.chat-window,
+.bottom-bar {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 638px;
+    min-width: 278px;
+}
+
+.app .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/*
+    TOP BAR
+*/
+
+.top-bar {
+    background: #fff;
+    display: flex;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    height: 72px;
+    position: fixed;
+    top: 0;
+}
+
+.bot-info {
+    padding: 15px 20px;
+}
+
+.bot-name {
+    font-weight: bold;
+    margin-bottom: .25rem;
+}
+
+.bot-status {
+    color: deepskyblue;
+}
+
+
+/*
+    CHAT WINDOW
+*/
+.chat-window {
+    height: calc(100vh - 130px);
+    padding-top: 20px;
+    overflow-y: auto;
+    background: linear-gradient(to top, #569170, #E1DCB6);
+    padding-left: 20px;
+    padding-right: 20px;
+	padding-bottom: 60px;
+    margin-top: 72px;
+    margin-bottom: 58px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px 20px 11px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    max-width: 70%;
+    position: relative;
+    box-shadow: 0 1px 0 0 #999;
+}
+
+.message::after {
+    content: '';
+    width: 0;
+    height: 0; 
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 1px 0 0 #999;
+}
+
+.bot-message {
+    background: #fff;
+    align-self: flex-start;
+    border-radius: 15px 15px 15px 0;
+}
+
+.bot-message::after {
+    border-bottom: 15px solid #fff;
+    border-left: 15px solid transparent;
+    left: -15px;
+}
+
+.user-message {
+    background: #effdde;
+    align-self: flex-end;
+    border-radius: 15px 15px 0 15px;
+}
+
+.user-message::after {
+    border-bottom: 15px solid #effdde;
+    border-right: 15px solid transparent;
+    right: -15px;
+}
+
+.yesno-message {
+    display: flex;
+    align-self: flex-end;
+}
+
+.yesno-message__item {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px 20px 11px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    max-width: 70%;
+    position: relative;
+    box-shadow: 0 1px 0 0 #999;
+    background: #fff;
+    width: 66px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.yesno-message__item:first-child {
+    margin-right: 15px;
+}
+
+.yesno-message__item.active {
+    background: #3b78e7;
+    color: #fff;
+    box-shadow: 0 1px 0 0 #555;
+}
+
+.offer-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.offer-item {
+    font-size: 14px;
+    text-decoration: inherit;
+    color: inherit;
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+    box-shadow: 0 1px 2px 0 #444;
+}
+
+.offer-item:nth-of-type(even) {
+    margin-left: 20px;
+}
+
+.offer-item__img {
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.offer-item__slogan,
+.offer-item__terms,
+.offer-item__max,
+.offer-item__button {
+    text-align: center;
+    margin-top: 7px;
+}
+
+.offer-item__img {
+    margin-bottom: 12px;
+}
+
+.offer-item__button {
+    margin-top: 18px;
+}
+
+.offer-item__button {
+    background: #3b78e7;
+    color: #fff;
+    border: none;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    cursor: pointer;
+}
+
+.offer-item__button span {
+    font-size: 16px;
+}
+
+.offer-more-button {
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    justify-self: flex-start;
+    background: #3b78e7;
+    color: #fff;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px 20px 11px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    position: relative;
+    outline: none;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px 0 #444;
+    text-align: center;
+}
+
+/*
+    BOTTOM BAR
+*/
+
+.bottom-bar {
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    height: 58px;
+    display: flex;
+}
+
+.user-input {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.smile-icon,
+.send-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.smile-icon {
+    width: 26px;
+    right: 43px;
+    cursor: default;
+}
+
+.send-button {
+    cursor: pointer;
+    right: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+@media all and (min-width: 640px) {
+
+    .app .container {
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+    }
+
+    .chat-window {
+        padding-bottom: 0;
+    }
+
+    .offer-list {
+        width: 70%;
+    }
+
+    .offer-more-button {
+        width: 70%;
+    }
+
+    /*.offer-item {
+        width: calc((100% - 40px) / 3);
+        margin-left: 20px;
+    }
+
+    .offer-item:nth-of-type(3n + 1) {
+        margin-left: 0;
+    }*/
+
+}
+
+@keyframes gets_bigger_1 {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.5); }
+    50% { transform: scale(1); }
+}
+
+@keyframes gets_bigger_2 {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    75% { transform: scale(1); }
+}
+
+@keyframes gets_bigger_3 {
+    0% { transform: scale(1); }
+    75% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+.dots i {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: deepskyblue;
+    margin-right: 3px;
+    position: relative;
+    top: -3px;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.dots i:nth-of-type(1) {
+    animation-name: gets_bigger_1;
+}
+
+.dots i:nth-of-type(2) {
+    animation-name: gets_bigger_2;
+}
+
+.dots i:nth-of-type(3) {
+    animation-name: gets_bigger_3;
+    margin-right: 5px;
+}
+
+.offer-list,
+.offer-item,
+.offer-more-button,
+.yesno-message {
+    display: none;
+}
